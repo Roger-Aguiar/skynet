@@ -39,7 +39,7 @@
             ComboBoxPacs = new ComboBox();
             label5 = new Label();
             ButtonDelete = new Button();
-            ButtonExit = new Button();
+            ButtonNew = new Button();
             label6 = new Label();
             ComboBoxCustomers = new ComboBox();
             SuspendLayout();
@@ -71,6 +71,7 @@
             ButtonSave.TabIndex = 2;
             ButtonSave.Text = "Salvar";
             ButtonSave.UseVisualStyleBackColor = true;
+            ButtonSave.Click += ButtonSave_Click;
             // 
             // label2
             // 
@@ -149,15 +150,16 @@
             ButtonDelete.Text = "Deletar";
             ButtonDelete.UseVisualStyleBackColor = true;
             // 
-            // ButtonExit
+            // ButtonNew
             // 
-            ButtonExit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonExit.Location = new Point(356, 212);
-            ButtonExit.Name = "ButtonExit";
-            ButtonExit.Size = new Size(130, 31);
-            ButtonExit.TabIndex = 11;
-            ButtonExit.Text = "Sair";
-            ButtonExit.UseVisualStyleBackColor = true;
+            ButtonNew.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonNew.Location = new Point(356, 212);
+            ButtonNew.Name = "ButtonNew";
+            ButtonNew.Size = new Size(130, 31);
+            ButtonNew.TabIndex = 11;
+            ButtonNew.Text = "Novo";
+            ButtonNew.UseVisualStyleBackColor = true;
+            ButtonNew.Click += ButtonNew_Click;
             // 
             // label6
             // 
@@ -186,7 +188,7 @@
             ClientSize = new Size(502, 305);
             Controls.Add(label6);
             Controls.Add(ComboBoxCustomers);
-            Controls.Add(ButtonExit);
+            Controls.Add(ButtonNew);
             Controls.Add(ButtonDelete);
             Controls.Add(label5);
             Controls.Add(ComboBoxPacs);
@@ -219,7 +221,7 @@
         private ComboBox ComboBoxPacs;
         private Label label5;
         private Button ButtonDelete;
-        private Button ButtonExit;
+        private Button ButtonNew;
         private Label label6;
         private ComboBox ComboBoxCustomers;
     }
