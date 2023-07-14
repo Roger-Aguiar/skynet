@@ -150,6 +150,7 @@
             ButtonDelete.TabIndex = 10;
             ButtonDelete.Text = "Deletar";
             ButtonDelete.UseVisualStyleBackColor = true;
+            ButtonDelete.Click += ButtonDelete_Click;
             // 
             // ButtonNew
             // 
@@ -191,7 +192,6 @@
             LabelCustomerToMakeAppointment.Name = "LabelCustomerToMakeAppointment";
             LabelCustomerToMakeAppointment.Size = new Size(0, 25);
             LabelCustomerToMakeAppointment.TabIndex = 14;
-            LabelCustomerToMakeAppointment.Click += LabelCustomerToMakeAppointment_Click;
             // 
             // FormPerson
             // 
