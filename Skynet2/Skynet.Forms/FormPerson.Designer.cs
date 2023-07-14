@@ -42,6 +42,7 @@
             ButtonNew = new Button();
             label6 = new Label();
             ComboBoxCustomers = new ComboBox();
+            LabelCustomerToMakeAppointment = new Label();
             SuspendLayout();
             // 
             // label1
@@ -180,12 +181,24 @@
             ComboBoxCustomers.Size = new Size(321, 29);
             ComboBoxCustomers.TabIndex = 12;
             ComboBoxCustomers.Text = "SELECIONE";
+            ComboBoxCustomers.SelectedIndexChanged += ComboBoxCustomers_SelectedIndexChanged;
+            // 
+            // LabelCustomerToMakeAppointment
+            // 
+            LabelCustomerToMakeAppointment.AutoSize = true;
+            LabelCustomerToMakeAppointment.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelCustomerToMakeAppointment.Location = new Point(16, 298);
+            LabelCustomerToMakeAppointment.Name = "LabelCustomerToMakeAppointment";
+            LabelCustomerToMakeAppointment.Size = new Size(0, 25);
+            LabelCustomerToMakeAppointment.TabIndex = 14;
+            LabelCustomerToMakeAppointment.Click += LabelCustomerToMakeAppointment_Click;
             // 
             // FormPerson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 305);
+            ClientSize = new Size(502, 332);
+            Controls.Add(LabelCustomerToMakeAppointment);
             Controls.Add(label6);
             Controls.Add(ComboBoxCustomers);
             Controls.Add(ButtonNew);
@@ -204,6 +217,7 @@
             Name = "FormPerson";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de clientes";
+            Load += FormPerson_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +238,6 @@
         private Button ButtonNew;
         private Label label6;
         private ComboBox ComboBoxCustomers;
+        private Label LabelCustomerToMakeAppointment;
     }
 }
