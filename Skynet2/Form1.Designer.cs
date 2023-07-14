@@ -30,6 +30,7 @@
         {
             buttonSearchAppointment = new Button();
             buttonMakeAppointment = new Button();
+            buttonRegisterPerson = new Button();
             SuspendLayout();
             // 
             // buttonSearchAppointment
@@ -54,11 +55,23 @@
             buttonMakeAppointment.UseVisualStyleBackColor = true;
             buttonMakeAppointment.Click += buttonMakeAppointment_Click;
             // 
+            // buttonRegisterPerson
+            // 
+            buttonRegisterPerson.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonRegisterPerson.Location = new Point(12, 112);
+            buttonRegisterPerson.Name = "buttonRegisterPerson";
+            buttonRegisterPerson.Size = new Size(252, 44);
+            buttonRegisterPerson.TabIndex = 2;
+            buttonRegisterPerson.Text = "Cadastrar cliente";
+            buttonRegisterPerson.UseVisualStyleBackColor = true;
+            buttonRegisterPerson.Click += buttonRegisterPerson_Click;
+            // 
             // FormSkynet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(276, 120);
+            ClientSize = new Size(276, 165);
+            Controls.Add(buttonRegisterPerson);
             Controls.Add(buttonMakeAppointment);
             Controls.Add(buttonSearchAppointment);
             MaximizeBox = false;
@@ -72,5 +85,6 @@
 
         private Button buttonSearchAppointment;
         private Button buttonMakeAppointment;
+        private Button buttonRegisterPerson;
     }
 }

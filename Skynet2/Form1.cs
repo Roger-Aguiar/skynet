@@ -1,4 +1,5 @@
 using EasyAutomationFramework;
+using Skynet2.Skynet.Forms;
 
 namespace Skynet2
 {
@@ -49,16 +50,10 @@ namespace Skynet2
 
         }
 
-        /*Lista de PACs
-         Pac Sumaúma
-        Pac Via Norte
-        Pac Alvorada
-        Pac São José
-        Pac Galeria dos remédios
-        Pac Parque 10
-        Pac Educandos
-        Pac Compensa
-        Pac Leste
-         */
+        private void buttonRegisterPerson_Click(object sender, EventArgs e)
+        {
+            FormPerson form = new();
+            form.ShowDialog();
+        }
     }
 }
