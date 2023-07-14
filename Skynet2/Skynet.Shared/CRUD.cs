@@ -19,5 +19,7 @@
             databaseContext.SaveChanges();
             MessageBox.Show("Cliente removido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);            
         }
+
+        public FormattableString ReadPersonTable() => $"select * from persons;";
     }
 }

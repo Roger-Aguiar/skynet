@@ -1,10 +1,11 @@
-using EasyAutomationFramework;
-using Skynet2.Skynet.Forms;
-
 namespace Skynet2
 {
     public partial class FormSkynet : Form
     {
+        private CRUD crud = new();
+        private DatabaseContext databaseContext = new();
+        private List<Person> people = new();
+
         public FormSkynet()
         {
             InitializeComponent();
@@ -14,14 +15,18 @@ namespace Skynet2
 
         private void SearchAppointment(string cpf)
         {
+            people.Clear();
+            people = crud.Read(crud.ReadPersonTable());
             var web = new Web();
-            //It starts the browser, Google Chrome by default
-            web.StartBrowser();
-            //It allows to navigate to a specified page
-            web.Navigate("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Consultar");
-            //It closes the browser
-            //web.CloseBrowser();
-            web.AssignValue(TypeElement.Name, "cpf", cpf).element.SendKeys(OpenQA.Selenium.Keys.Enter);
+
+            foreach (var item in people) 
+            {
+                web.StartBrowser();
+                web.Navigate("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Consultar");
+                //It closes the browser
+                //web.CloseBrowser();
+                web.AssignValue(TypeElement.Name, "cpf", item.Cpf).element.SendKeys(OpenQA.Selenium.Keys.Enter);
+            }            
         }
 
         private void MakeAppointment()

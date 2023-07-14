@@ -54,7 +54,7 @@
                 ComboBoxCustomers.Items.Add(item.Name);
         }
 
-        private FormattableString ReadPersonTable() => $"select * from persons;";
+        
                
         #endregion
 
@@ -62,7 +62,7 @@
         {
             crud.Create(FillPersonModel());
             persons.Clear();
-            persons = crud.Read(ReadPersonTable());
+            persons = crud.Read(crud.ReadPersonTable());
             FillFields();
             FillComboBoxCustomers();
         }
@@ -75,7 +75,7 @@
         private void FormPerson_Load(object sender, EventArgs e)
         {
             persons.Clear();
-            persons = crud.Read(ReadPersonTable());
+            persons = crud.Read(crud.ReadPersonTable());
             FillFields();
             FillComboBoxCustomers();
         }
@@ -93,7 +93,7 @@
             {
                 crud.Delete(persons[index]);
                 persons.Clear();
-                persons = crud.Read(ReadPersonTable());
+                persons = crud.Read(crud.ReadPersonTable());
                 FillFields();
                 FillComboBoxCustomers();
                 index = 0;
