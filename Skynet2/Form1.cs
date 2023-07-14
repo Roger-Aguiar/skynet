@@ -1,5 +1,4 @@
 using EasyAutomationFramework;
-using System;
 
 namespace Skynet2
 {
