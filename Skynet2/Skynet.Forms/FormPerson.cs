@@ -5,6 +5,7 @@
         private DatabaseContext databaseContext = new();
         private List<Person> persons = new();
         private int index = 0;
+        private CRUD crud = new();
 
         public FormPerson()
         {
@@ -54,31 +55,14 @@
         }
 
         private FormattableString ReadPersonTable() => $"select * from persons;";
-
-        private void Create()
-        {
-            databaseContext.Add(FillPersonModel());
-            databaseContext.SaveChanges();
-            MessageBox.Show("Cliente cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private List<Person> Read() => databaseContext.Persons.FromSqlInterpolated(ReadPersonTable()).ToList();
-
-        private void Delete()
-        {
-            databaseContext.Remove(persons[index]);
-            databaseContext.SaveChanges();
-            MessageBox.Show("Cliente removido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            index = 0;
-            ComboBoxCustomers.Text = "SELECIONE";
-        }
+               
         #endregion
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            Create();
+            crud.Create(FillPersonModel());
             persons.Clear();
-            persons = Read();
+            persons = crud.Read(ReadPersonTable());
             FillFields();
             FillComboBoxCustomers();
         }
@@ -91,7 +75,7 @@
         private void FormPerson_Load(object sender, EventArgs e)
         {
             persons.Clear();
-            persons = Read();
+            persons = crud.Read(ReadPersonTable());
             FillFields();
             FillComboBoxCustomers();
         }
@@ -107,11 +91,13 @@
             var result = MessageBox.Show("Tem certeza que deseja remover esse cliente?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes) 
             {
-                Delete();
+                crud.Delete(persons[index]);
                 persons.Clear();
-                persons = Read();
+                persons = crud.Read(ReadPersonTable());
                 FillFields();
                 FillComboBoxCustomers();
+                index = 0;
+                ComboBoxCustomers.Text = "SELECIONE";
             }
         }
     }
