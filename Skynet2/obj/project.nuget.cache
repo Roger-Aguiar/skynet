@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PBQ6ayJ4MVgi0C/6Fl9/wtNq7AYtSq0uekII4Rr1kFD1rXAdj06N4g9DYWQ/auxLBEc2E3NLfId/hJe8oxxsgw==",
+  "dgSpecHash": "ZIci5u0Jvbj8XiymikOVO9dx8pO3MUgZeDT/tR0Srzzvuc0siBS1g+yQ6hWOwv6w6TQmksIrmCHCC2/AkjoCgQ==",
   "success": true,
-  "projectFilePath": "C:\\dev2\\Skynet2\\Skynet2\\Skynet2.csproj",
+  "projectFilePath": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roger\\.nuget\\packages\\easy.automation\\1.0.0.12\\easy.automation.1.0.0.12.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
