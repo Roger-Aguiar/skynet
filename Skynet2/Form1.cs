@@ -8,6 +8,10 @@ namespace Skynet2
 
         public FormSkynet()
         {
+            Splashscreen splashScreen = new();
+            splashScreen.Show();
+            Thread.Sleep(5000);
+            splashScreen.Close();
             InitializeComponent();
         }
 
