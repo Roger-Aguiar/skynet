@@ -19,7 +19,7 @@
             return new Person
             {
                 Name = TextBoxName.Text,
-                Cpf = TextBoxCpf.Text,
+                Cpf = MaskedTextBoxCpf.Text,
                 Birthdate = TextBoxBirthdate.Text,
                 Pac = ComboBoxPacs.Text
             };
@@ -28,7 +28,7 @@
         private void ClearFields()
         {
             TextBoxName.Clear();
-            TextBoxCpf.Clear();
+            MaskedTextBoxCpf.Clear();
             TextBoxBirthdate.Clear();
             ComboBoxPacs.Text = "SELECIONE";
             ComboBoxCustomers.Text = "SELECIONE";
@@ -40,7 +40,7 @@
             if (persons.Count > 0)
             {
                 TextBoxName.Text = persons[index].Name;
-                TextBoxCpf.Text = persons[index].Cpf;
+                MaskedTextBoxCpf.Text = persons[index].Cpf;
                 TextBoxBirthdate.Text = persons[index].Birthdate;
                 ComboBoxPacs.Text = persons[index].Pac;
                 LabelCustomerToMakeAppointment.Text = $"{persons.Count} cliente(s) para agendar.";
@@ -54,7 +54,25 @@
                 ComboBoxCustomers.Items.Add(item.Name);
         }
 
+        private void TryMakeAppointment()
+        {
+            var web = new Web();
 
+            web.StartBrowser();
+            //web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10");
+            web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/c582e8c8-8797-46e1-a4a3-d78b7b33bfad");
+
+            //It closes the browser
+            //web.CloseBrowser();
+            web.AssignValue(TypeElement.Id, "via", "1ª Via");
+            web.AssignValue(TypeElement.Id, "tipo", "Quero que o sistema escolha o horário mais próximo");
+            web.AssignValue(TypeElement.Id, "nome", TextBoxName.Text);
+            web.AssignValue(TypeElement.Id, "cpf", MaskedTextBoxCpf.Text);
+            web.AssignValue(TypeElement.Id, "dataNascimento", TextBoxBirthdate.Text);
+            //web.AssignValue(TypeElement.Id, "dataNascimento", "25/04/1986").element.SendKeys(OpenQA.Selenium.Keys.Enter);
+            //Inserir o código para quebrar o capctcha
+            //https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10
+        }
 
         #endregion
 
@@ -99,6 +117,11 @@
                 index = 0;
                 ComboBoxCustomers.Text = "SELECIONE";
             }
+        }
+
+        private void ButtonMakeAppointment_Click(object sender, EventArgs e)
+        {
+            TryMakeAppointment();
         }
     }
 }

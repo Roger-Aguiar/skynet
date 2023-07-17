@@ -60,7 +60,8 @@ namespace Skynet2
             
             web.StartBrowser();
             #pragma warning disable CS8604 // Possible null reference argument.
-            web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10");
+            //web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10");
+            web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/c582e8c8-8797-46e1-a4a3-d78b7b33bfad");
             #pragma warning restore CS8604 // Possible null reference argument.
             //It closes the browser
             //web.CloseBrowser();
@@ -103,7 +104,7 @@ namespace Skynet2
                     url = "5922517b-5184-4cf2-afe2-2cca6449f499";
                     break;
                 case "PAC STUDIO 5":
-                    url = "5922517b-5184-4cf2-afe2-2cca6449f499";
+                    url = "c582e8c8-8797-46e1-a4a3-d78b7b33bfad";
                     break;
                 case "PAC VIA NORTE":
                     url = "5922517b-5184-4cf2-afe2-2cca6449f499";

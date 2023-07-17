@@ -32,7 +32,6 @@
             TextBoxName = new TextBox();
             ButtonSave = new Button();
             label2 = new Label();
-            TextBoxCpf = new TextBox();
             label3 = new Label();
             TextBoxBirthdate = new TextBox();
             label4 = new Label();
@@ -43,6 +42,8 @@
             label6 = new Label();
             ComboBoxCustomers = new ComboBox();
             LabelCustomerToMakeAppointment = new Label();
+            ButtonMakeAppointment = new Button();
+            MaskedTextBoxCpf = new MaskedTextBox();
             SuspendLayout();
             // 
             // label1
@@ -83,14 +84,6 @@
             label2.Size = new Size(255, 25);
             label2.TabIndex = 3;
             label2.Text = "Clientes para agendamento";
-            // 
-            // TextBoxCpf
-            // 
-            TextBoxCpf.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxCpf.Location = new Point(165, 91);
-            TextBoxCpf.Name = "TextBoxCpf";
-            TextBoxCpf.Size = new Size(321, 29);
-            TextBoxCpf.TabIndex = 5;
             // 
             // label3
             // 
@@ -167,7 +160,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(16, 266);
+            label6.Location = new Point(12, 301);
             label6.Name = "label6";
             label6.Size = new Size(68, 21);
             label6.TabIndex = 13;
@@ -177,7 +170,7 @@
             // 
             ComboBoxCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxCustomers.FormattingEnabled = true;
-            ComboBoxCustomers.Location = new Point(165, 263);
+            ComboBoxCustomers.Location = new Point(165, 298);
             ComboBoxCustomers.Name = "ComboBoxCustomers";
             ComboBoxCustomers.Size = new Size(321, 29);
             ComboBoxCustomers.TabIndex = 12;
@@ -188,16 +181,38 @@
             // 
             LabelCustomerToMakeAppointment.AutoSize = true;
             LabelCustomerToMakeAppointment.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelCustomerToMakeAppointment.Location = new Point(16, 298);
+            LabelCustomerToMakeAppointment.Location = new Point(12, 349);
             LabelCustomerToMakeAppointment.Name = "LabelCustomerToMakeAppointment";
             LabelCustomerToMakeAppointment.Size = new Size(0, 25);
             LabelCustomerToMakeAppointment.TabIndex = 14;
+            // 
+            // ButtonMakeAppointment
+            // 
+            ButtonMakeAppointment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonMakeAppointment.Location = new Point(12, 249);
+            ButtonMakeAppointment.Name = "ButtonMakeAppointment";
+            ButtonMakeAppointment.Size = new Size(474, 31);
+            ButtonMakeAppointment.TabIndex = 15;
+            ButtonMakeAppointment.Text = "Agendar";
+            ButtonMakeAppointment.UseVisualStyleBackColor = true;
+            ButtonMakeAppointment.Click += ButtonMakeAppointment_Click;
+            // 
+            // MaskedTextBoxCpf
+            // 
+            MaskedTextBoxCpf.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MaskedTextBoxCpf.Location = new Point(165, 91);
+            MaskedTextBoxCpf.Mask = "000.000.000-00";
+            MaskedTextBoxCpf.Name = "MaskedTextBoxCpf";
+            MaskedTextBoxCpf.Size = new Size(321, 29);
+            MaskedTextBoxCpf.TabIndex = 16;
             // 
             // FormPerson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 332);
+            ClientSize = new Size(502, 383);
+            Controls.Add(MaskedTextBoxCpf);
+            Controls.Add(ButtonMakeAppointment);
             Controls.Add(LabelCustomerToMakeAppointment);
             Controls.Add(label6);
             Controls.Add(ComboBoxCustomers);
@@ -207,7 +222,6 @@
             Controls.Add(ComboBoxPacs);
             Controls.Add(TextBoxBirthdate);
             Controls.Add(label4);
-            Controls.Add(TextBoxCpf);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(ButtonSave);
@@ -228,7 +242,6 @@
         private TextBox TextBoxName;
         private Button ButtonSave;
         private Label label2;
-        private TextBox TextBoxCpf;
         private Label label3;
         private TextBox TextBoxBirthdate;
         private Label label4;
@@ -239,5 +252,7 @@
         private Label label6;
         private ComboBox ComboBoxCustomers;
         private Label LabelCustomerToMakeAppointment;
+        private Button ButtonMakeAppointment;
+        private MaskedTextBox MaskedTextBoxCpf;
     }
 }
