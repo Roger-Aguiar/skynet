@@ -37,14 +37,14 @@
 
         private void FillFields()
         {
-            if(persons.Count > 0) 
+            if (persons.Count > 0)
             {
                 TextBoxName.Text = persons[index].Name;
                 TextBoxCpf.Text = persons[index].Cpf;
                 TextBoxBirthdate.Text = persons[index].Birthdate;
                 ComboBoxPacs.Text = persons[index].Pac;
                 LabelCustomerToMakeAppointment.Text = $"{persons.Count} cliente(s) para agendar.";
-            }            
+            }
         }
 
         private void FillComboBoxCustomers()
@@ -54,8 +54,8 @@
                 ComboBoxCustomers.Items.Add(item.Name);
         }
 
-        
-               
+
+
         #endregion
 
         private void ButtonSave_Click(object sender, EventArgs e)
@@ -83,13 +83,13 @@
         private void ComboBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
             index = ComboBoxCustomers.SelectedIndex >= 0 ? ComboBoxCustomers.SelectedIndex : 0;
-            FillFields();            
+            FillFields();
         }
-                
+
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Tem certeza que deseja remover esse cliente?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes) 
+            if (result == DialogResult.Yes)
             {
                 crud.Delete(persons[index]);
                 persons.Clear();
