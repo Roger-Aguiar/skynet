@@ -1,4 +1,7 @@
-﻿namespace Skynet2.Skynet.Forms
+﻿using javax.swing.border;
+using TwoCaptcha;
+
+namespace Skynet2.Skynet.Forms
 {
     public partial class FormPerson : Form
     {
@@ -54,22 +57,30 @@
                 ComboBoxCustomers.Items.Add(item.Name);
         }
 
-        private void TryMakeAppointment()
+        private async void TryMakeAppointment()
         {
             var web = new Web();
 
             web.StartBrowser();
+            var link = $"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/c582e8c8-8797-46e1-a4a3-d78b7b33bfad";
             //web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10");
-            web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/c582e8c8-8797-46e1-a4a3-d78b7b33bfad");
+            web.Navigate(link);
+            web.WaitForLoad();
 
+           
+            //document.querySelector("#g-recaptcha-response").innerHTML = 'teste';
             //It closes the browser
             //web.CloseBrowser();
             web.AssignValue(TypeElement.Id, "via", "1ª Via");
             web.AssignValue(TypeElement.Id, "tipo", "Quero que o sistema escolha o horário mais próximo");
             web.AssignValue(TypeElement.Id, "nome", TextBoxName.Text);
             web.AssignValue(TypeElement.Id, "cpf", MaskedTextBoxCpf.Text);
-            web.AssignValue(TypeElement.Id, "dataNascimento", TextBoxBirthdate.Text);
-            //web.AssignValue(TypeElement.Id, "dataNascimento", "25/04/1986").element.SendKeys(OpenQA.Selenium.Keys.Enter);
+            //web.AssignValue(TypeElement.Id, "dataNascimento", TextBoxBirthdate.Text);
+            var captcha_key = web.GetValue(TypeElement.Id, "grecaptcharesponse").element.GetAttribute("data-sitekey");
+            var solve_captcha = new Solve();
+            var result = await solve_captcha.ReCaptchaV2Async("f19489630e32745e0e7a81d18237b05d", captcha_key, link);
+            web.ExecuteScript($"document.querySelector('#g-recaptcha-response').innerHTML = '{result.Request}';");
+            web.AssignValue(TypeElement.Id, "dataNascimento", "25/04/1986").element.SendKeys(OpenQA.Selenium.Keys.Enter);
             //Inserir o código para quebrar o capctcha
             //https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10
         }

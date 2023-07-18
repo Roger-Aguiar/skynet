@@ -166,3 +166,6 @@ C:\dev2\skynet\Skynet2\obj\Debug\net7.0-windows\refint\Skynet2.dll
 C:\dev2\skynet\Skynet2\obj\Debug\net7.0-windows\Skynet2.pdb
 C:\dev2\skynet\Skynet2\obj\Debug\net7.0-windows\Skynet2.genruntimeconfig.cache
 C:\dev2\skynet\Skynet2\obj\Debug\net7.0-windows\ref\Skynet2.dll
+C:\dev2\skynet\Skynet2\bin\Debug\net7.0-windows\TwoCaptcha.dll
+C:\dev2\skynet\Skynet2\bin\Debug\net7.0-windows\Flurl.dll
+C:\dev2\skynet\Skynet2\bin\Debug\net7.0-windows\Flurl.Http.dll
