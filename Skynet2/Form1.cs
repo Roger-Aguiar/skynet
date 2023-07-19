@@ -107,9 +107,10 @@ namespace Skynet2
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
             WebScraper webScraper = new();
-            var listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
+            //var listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
+            var listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos.html");
             //TryMakeAppointment(listOfPacs);
-            
+
             MessageBox.Show("Vagas disponíveis!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             RichTextBoxPacs.Text = $"Vagas abertas às {DateTime.Now}\n\n";
 
