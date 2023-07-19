@@ -117,7 +117,7 @@
             // 
             ComboBoxPacs.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxPacs.FormattingEnabled = true;
-            ComboBoxPacs.Items.AddRange(new object[] { "PAC ALVORADA", "PAC COMPENSA", "PAC GALERIA DOS REMÉDIOS", "PAC LESTE", "PAC PARQUE DEZ", "PAC SÃO JOSÉ", "PAC STUDIO 5", "PAC SUMAÚMA", "PAC VIA NORTE", "PAC MUNICIPAL GALERIA ESPÍRITO SANTO", "PAC MUNICIPAL T4 - SHOPPING PHELIPPE DAOU", "Açaí - Baratão da Carne", "Buriti - Águas de Manaus", "Cupuaçu - Sesi Clube do Trabalhador", "Tucumâ - Shopping Phelippe Daou" });
+            ComboBoxPacs.Items.AddRange(new object[] { "PAC ALVORADA", "PAC COMPENSA", "PAC GALERIA DOS REMÉDIOS", "PAC LESTE", "PAC PARQUE DEZ", "PAC SÃO JOSÉ", "PAC STUDIO 5", "PAC SUMAÚMA", "PAC VIA NORTE", "PAC MUNICIPAL GALERIA ESPÍRITO SANTO", "PAC MUNICIPAL T4", "Açaí - Baratão da Carne", "Buriti - Águas de Manaus", "Cupuaçu - Sesi Clube do Trabalhador", "Tucumâ - Shopping Phelippe Daou" });
             ComboBoxPacs.Location = new Point(165, 161);
             ComboBoxPacs.Name = "ComboBoxPacs";
             ComboBoxPacs.Size = new Size(321, 29);

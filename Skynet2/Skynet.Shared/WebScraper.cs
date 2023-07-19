@@ -5,9 +5,7 @@ namespace Skynet2.Skynet.Shared
     public class WebScraper : Web
     {
         public DataTable GetData(string url)
-        {
-            //Experimentar essa linha de código para ver se a página vai atualizar automaticamente
-            //Navigate(url).element.SendKeys(OpenQA.Selenium.Keys.F5);
+        {            
             if (driver == null)
                 StartBrowser();
 
@@ -28,7 +26,7 @@ namespace Skynet2.Skynet.Shared
             return Base.ConvertTo(items);
         }
 
-        public void GetAvailablePacs(string url)
+        public List<PACs> GetAvailablePacs(string url)
         {
             List<PACs> listOfPacs = new();
 
@@ -37,24 +35,24 @@ namespace Skynet2.Skynet.Shared
                 StartBrowser();
                 Navigate(url);
                 var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.ClassName("table"));
-
+               
                 while (tableOfAvailablePacs.Count == 0) 
                 {
                     Thread.Sleep(5000);
                     Navigate(url);
                     tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.ClassName("table"));
                 }
-
+               
                 foreach (var availablePacs in tableOfAvailablePacs)
                 {
                     listOfPacs.Add(new PACs() 
-                    {
+                    {                       
                         Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
                         Local = availablePacs.FindElement(By.TagName("td")).Text//Ver uma forma de obter o índice da coluna
                     });                    
                 }
             }
-            //return listOfPacs;
+            return listOfPacs;
         }
     }
 }

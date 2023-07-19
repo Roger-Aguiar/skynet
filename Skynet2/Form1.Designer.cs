@@ -31,6 +31,7 @@
             buttonSearchAppointment = new Button();
             buttonMakeAppointment = new Button();
             buttonRegisterPerson = new Button();
+            RichTextBoxPacs = new RichTextBox();
             SuspendLayout();
             // 
             // buttonSearchAppointment
@@ -66,11 +67,21 @@
             buttonRegisterPerson.UseVisualStyleBackColor = true;
             buttonRegisterPerson.Click += buttonRegisterPerson_Click;
             // 
+            // RichTextBoxPacs
+            // 
+            RichTextBoxPacs.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            RichTextBoxPacs.Location = new Point(12, 162);
+            RichTextBoxPacs.Name = "RichTextBoxPacs";
+            RichTextBoxPacs.Size = new Size(252, 132);
+            RichTextBoxPacs.TabIndex = 3;
+            RichTextBoxPacs.Text = "";
+            // 
             // FormSkynet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(276, 165);
+            ClientSize = new Size(276, 306);
+            Controls.Add(RichTextBoxPacs);
             Controls.Add(buttonRegisterPerson);
             Controls.Add(buttonMakeAppointment);
             Controls.Add(buttonSearchAppointment);
@@ -87,5 +98,6 @@
         private Button buttonSearchAppointment;
         private Button buttonMakeAppointment;
         private Button buttonRegisterPerson;
+        private RichTextBox RichTextBoxPacs;
     }
 }

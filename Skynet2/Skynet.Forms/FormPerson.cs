@@ -1,4 +1,5 @@
-﻿using javax.swing.border;
+﻿using EasyAutomationFramework;
+using javax.swing.border;
 using TwoCaptcha;
 
 namespace Skynet2.Skynet.Forms
@@ -67,7 +68,7 @@ namespace Skynet2.Skynet.Forms
             web.Navigate(link);
             web.WaitForLoad();
 
-           
+
             //document.querySelector("#g-recaptcha-response").innerHTML = 'teste';
             //It closes the browser
             //web.CloseBrowser();
@@ -75,14 +76,11 @@ namespace Skynet2.Skynet.Forms
             web.AssignValue(TypeElement.Id, "tipo", "Quero que o sistema escolha o horário mais próximo");
             web.AssignValue(TypeElement.Id, "nome", TextBoxName.Text);
             web.AssignValue(TypeElement.Id, "cpf", MaskedTextBoxCpf.Text);
-            //web.AssignValue(TypeElement.Id, "dataNascimento", TextBoxBirthdate.Text);
             var captcha_key = web.GetValue(TypeElement.Id, "grecaptcharesponse").element.GetAttribute("data-sitekey");
             var solve_captcha = new Solve();
             var result = await solve_captcha.ReCaptchaV2Async("f19489630e32745e0e7a81d18237b05d", captcha_key, link);
             web.ExecuteScript($"document.querySelector('#g-recaptcha-response').innerHTML = '{result.Request}';");
             web.AssignValue(TypeElement.Id, "dataNascimento", "25/04/1986").element.SendKeys(OpenQA.Selenium.Keys.Enter);
-            //Inserir o código para quebrar o capctcha
-            //https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10
         }
 
         #endregion
@@ -121,11 +119,12 @@ namespace Skynet2.Skynet.Forms
             if (result == DialogResult.Yes)
             {
                 crud.Delete(persons[index]);
+                index = 0;
                 persons.Clear();
                 persons = crud.Read(crud.ReadPersonTable());
                 FillFields();
                 FillComboBoxCustomers();
-                index = 0;
+
                 ComboBoxCustomers.Text = "SELECIONE";
             }
         }
