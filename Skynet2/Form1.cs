@@ -1,4 +1,7 @@
+using EasyAutomationFramework;
+using EasyAutomationFramework.Model;
 using Skynet2.Skynet.Models;
+using Skynet2.Skynet.Shared;
 using System.Windows.Forms;
 using TwoCaptcha;
 
@@ -147,6 +150,23 @@ namespace Skynet2
             return url;
         }
 
+        private void ExecuteWebScraper()
+        {
+            WebScraper webScraper = new();
+            var computers = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers");
+            var tablets = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers/tablets");
+            var laptops = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops");
+
+            var parameters = new ParamsDataTable("Data", @"C:\temp\excel", new List<DataTables> 
+            {
+                new DataTables("Computers", computers),
+                new DataTables("Laptops", laptops),
+                new DataTables("Tablets", tablets)
+            });
+
+            Base.GenerateExcel(parameters);
+        }
+
         #endregion
 
         private void buttonSearchAppointment_Click(object sender, EventArgs e)
@@ -157,9 +177,13 @@ namespace Skynet2
 
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
+            WebScraper webScraper = new();
+            webScraper.GetData2("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
             //MakeAppointment();
-            TryMakeAppointment();
-        }
+            //TryMakeAppointment();
+            //ExecuteWebScraper()
+
+            ;        }
 
         private void buttonRegisterPerson_Click(object sender, EventArgs e)
         {
