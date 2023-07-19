@@ -178,7 +178,7 @@ namespace Skynet2
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
             WebScraper webScraper = new();
-            webScraper.GetData2("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
+            webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
             //MakeAppointment();
             //TryMakeAppointment();
             //ExecuteWebScraper()

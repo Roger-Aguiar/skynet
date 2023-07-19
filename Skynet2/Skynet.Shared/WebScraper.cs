@@ -28,19 +28,33 @@ namespace Skynet2.Skynet.Shared
             return Base.ConvertTo(items);
         }
 
-        public void GetData2(string url)
+        public void GetAvailablePacs(string url)
         {
+            List<PACs> listOfPacs = new();
+
             if (driver == null)
             {
                 StartBrowser();
                 Navigate(url);
-                Thread.Sleep(2000);
-                Navigate(url);
-                Thread.Sleep(2000);
-                Navigate(url);
-                Thread.Sleep(2000);
-                Navigate(url);                
-            }            
+                var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.ClassName("table"));
+
+                while (tableOfAvailablePacs.Count == 0) 
+                {
+                    Thread.Sleep(5000);
+                    Navigate(url);
+                    tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.ClassName("table"));
+                }
+
+                foreach (var availablePacs in tableOfAvailablePacs)
+                {
+                    listOfPacs.Add(new PACs() 
+                    {
+                        Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
+                        Local = availablePacs.FindElement(By.TagName("td")).Text//Ver uma forma de obter o índice da coluna
+                    });                    
+                }
+            }
+            //return listOfPacs;
         }
     }
 }
