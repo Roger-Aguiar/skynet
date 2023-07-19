@@ -109,6 +109,7 @@ namespace Skynet2
             WebScraper webScraper = new();
             var listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
             //TryMakeAppointment(listOfPacs);
+            RichTextBoxPacs.Text = $"Vagas abertas às {DateTime.Now}\n\n";
 
             foreach (var item in listOfPacs)
                 RichTextBoxPacs.Text += $"Id: {item.Id}\nPAC: {item.Local}\n===============================================";
