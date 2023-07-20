@@ -39,7 +39,7 @@
             buttonSearchAppointment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSearchAppointment.Location = new Point(12, 12);
             buttonSearchAppointment.Name = "buttonSearchAppointment";
-            buttonSearchAppointment.Size = new Size(252, 44);
+            buttonSearchAppointment.Size = new Size(436, 44);
             buttonSearchAppointment.TabIndex = 0;
             buttonSearchAppointment.Text = "Consultar agendamento";
             buttonSearchAppointment.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             buttonMakeAppointment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMakeAppointment.Location = new Point(12, 62);
             buttonMakeAppointment.Name = "buttonMakeAppointment";
-            buttonMakeAppointment.Size = new Size(252, 44);
+            buttonMakeAppointment.Size = new Size(436, 44);
             buttonMakeAppointment.TabIndex = 1;
             buttonMakeAppointment.Text = "Fazer agendamentos";
             buttonMakeAppointment.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             buttonRegisterPerson.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonRegisterPerson.Location = new Point(12, 112);
             buttonRegisterPerson.Name = "buttonRegisterPerson";
-            buttonRegisterPerson.Size = new Size(252, 44);
+            buttonRegisterPerson.Size = new Size(436, 44);
             buttonRegisterPerson.TabIndex = 2;
             buttonRegisterPerson.Text = "Cadastrar cliente";
             buttonRegisterPerson.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             RichTextBoxPacs.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             RichTextBoxPacs.Location = new Point(12, 162);
             RichTextBoxPacs.Name = "RichTextBoxPacs";
-            RichTextBoxPacs.Size = new Size(252, 132);
+            RichTextBoxPacs.Size = new Size(436, 132);
             RichTextBoxPacs.TabIndex = 3;
             RichTextBoxPacs.Text = "";
             // 
@@ -80,7 +80,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(276, 306);
+            ClientSize = new Size(460, 306);
             Controls.Add(RichTextBoxPacs);
             Controls.Add(buttonRegisterPerson);
             Controls.Add(buttonMakeAppointment);

@@ -4,4 +4,8 @@ global using Skynet2.Skynet.Shared;
 global using EasyAutomationFramework;
 global using Skynet2.Skynet.Forms;
 global using OpenQA.Selenium;
+global using System.Data;
+global using EasyAutomationFramework.Model;
+global using TwoCaptcha;
+
 

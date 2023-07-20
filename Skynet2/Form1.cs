@@ -1,6 +1,3 @@
-using EasyAutomationFramework.Model;
-using TwoCaptcha;
-
 namespace Skynet2
 {
     public partial class FormSkynet : Form
@@ -11,10 +8,10 @@ namespace Skynet2
 
         public FormSkynet()
         {
-            /*Splashscreen splashScreen = new();
+            Splashscreen splashScreen = new();
             splashScreen.Show();
             Thread.Sleep(5000);
-            splashScreen.Close();*/
+            splashScreen.Close();
             InitializeComponent();
         }
 
@@ -41,9 +38,9 @@ namespace Skynet2
             foreach (var item in people)
             {
                 web.StartBrowser();
-#pragma warning disable CS8604 // Possible null reference argument.
+                #pragma warning disable CS8604 // Possible null reference argument.
                 //web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/{SelectPac(item.Pac)}");
-#pragma warning restore CS8604 // Possible null reference argument.
+                #pragma warning restore CS8604 // Possible null reference argument.
                 //It closes the browser
                 //web.CloseBrowser();
                 web.AssignValue(TypeElement.Id, "via", "1ª Via");

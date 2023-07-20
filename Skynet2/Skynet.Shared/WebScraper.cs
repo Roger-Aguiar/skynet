@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Skynet2.Skynet.Shared
+﻿namespace Skynet2.Skynet.Shared
 {
     public class WebScraper : Web
     {
@@ -47,8 +45,8 @@ namespace Skynet2.Skynet.Shared
                 {
                     listOfPacs.Add(new PACs()
                     {
-                        //Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
-                        Local = availablePacs.FindElement(By.TagName("td")).Text//Ver uma forma de obter o índice da coluna
+                        Id = availablePacs.GetAttribute("id"),
+                        Local = availablePacs.FindElement(By.TagName("td")).Text
                     });
                 }
             }
