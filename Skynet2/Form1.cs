@@ -11,10 +11,10 @@ namespace Skynet2
 
         public FormSkynet()
         {
-            Splashscreen splashScreen = new();
+            /*Splashscreen splashScreen = new();
             splashScreen.Show();
             Thread.Sleep(5000);
-            splashScreen.Close();
+            splashScreen.Close();*/
             InitializeComponent();
         }
 
@@ -112,10 +112,10 @@ namespace Skynet2
             //TryMakeAppointment(listOfPacs);
 
             MessageBox.Show("Vagas disponíveis!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            RichTextBoxPacs.Text = $"Vagas abertas às {DateTime.Now}\n\n";
+            RichTextBoxPacs.Text = $"Vagas disponíveis \n{DateTime.Now.ToShortTimeString()}\n\n";
 
             foreach (var item in listOfPacs)
-                RichTextBoxPacs.Text += $"Id: {item.Id}\nPAC: {item.Local}\n===============================================";
+                RichTextBoxPacs.Text += $"Id: {item.Id}\n{item.Local}\n";
         }
 
         private void buttonRegisterPerson_Click(object sender, EventArgs e)

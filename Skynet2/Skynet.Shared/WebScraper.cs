@@ -25,36 +25,7 @@ namespace Skynet2.Skynet.Shared
             
             return Base.ConvertTo(items);
         }
-
-        /*public List<PACs> GetAvailablePacs(string url)
-        {
-            List<PACs> listOfPacs = new();
-
-            if (driver == null)
-            {
-                StartBrowser();
-                Navigate(url);
-                var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.TagName("table"));
-               
-                while (tableOfAvailablePacs.Count == 0) 
-                {
-                    Thread.Sleep(5000);
-                    Navigate(url);
-                    tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.TagName("table"));
-                }
-               
-                foreach (var availablePacs in tableOfAvailablePacs)
-                {
-                    listOfPacs.Add(new PACs() 
-                    {                       
-                        Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
-                        Local = availablePacs.FindElement(By.TagName("td")).Text//Ver uma forma de obter o índice da coluna
-                    });                    
-                }
-            }
-            return listOfPacs;
-        }*/
-
+                        
         public List<PACs> GetAvailablePacs(string url)
         {
             List<PACs> listOfPacs = new();
@@ -64,19 +35,19 @@ namespace Skynet2.Skynet.Shared
                 StartBrowser();
                 Navigate(url);
                 var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table/tbody").element.FindElements(By.TagName("tr"));
-                
-                /*while (tableOfAvailablePacs.Count == 0)
+
+                while (tableOfAvailablePacs.Count == 0)
                 {
                     Thread.Sleep(5000);
                     Navigate(url);
-                    tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table").element.FindElements(By.TagName("table"));
-                }*/
+                    tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table/tbody").element.FindElements(By.TagName("tr"));
+                }
 
                 foreach (var availablePacs in tableOfAvailablePacs)
                 {
                     listOfPacs.Add(new PACs()
                     {
-                        Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
+                        //Id = availablePacs.FindElement(By.TagName("tr")).GetAttribute("id"),
                         Local = availablePacs.FindElement(By.TagName("td")).Text//Ver uma forma de obter o índice da coluna
                     });
                 }
