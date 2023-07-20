@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w6jv1Ru7y/iX5QCEikMCt+yn4NtF1hmAweDDgoEl4VkX6Qnq6nv1Tfe0TqveFHu74uFPA+esPpWylvj64h/A4A==",
+  "dgSpecHash": "Hd5hV4A8YH/l1UR53K7otrF8A7RlC4yRw8in922mSAhJQdQzDIO1WiZ2OKCtPtKzs4Mn/FpnD878oraPpsfWGA==",
   "success": true,
-  "projectFilePath": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
+  "projectFilePath": "C:\\dev\\skynet\\Skynet2\\Skynet2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roger\\.nuget\\packages\\2captcha\\2.2.0\\2captcha.2.2.0.nupkg.sha512",
     "C:\\Users\\roger\\.nuget\\packages\\easy.automation\\1.0.0.12\\easy.automation.1.0.0.12.nupkg.sha512",
