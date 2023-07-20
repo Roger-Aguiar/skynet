@@ -1,29 +1,7 @@
 ﻿namespace Skynet2.Skynet.Shared
 {
     public class WebScraper : Web
-    {
-        public DataTable GetData(string url)
-        {            
-            if (driver == null)
-                StartBrowser();
-
-            var items = new List<Item>();
-            Navigate(url);
-            var elements = GetValue(TypeElement.Xpath, "/html/body/div[1]/div[3]/div/div[2]/div").element.FindElements(By.ClassName("thumbnail"));
-            
-            foreach (var element in elements)
-            {
-                items.Add(new Item() 
-                {
-                    Title = element.FindElement(By.ClassName("title")).GetAttribute("title"),
-                    Price = element.FindElement(By.ClassName("price")).Text,
-                    Description = element.FindElement(By.ClassName("description")).Text
-                });
-            }
-            
-            return Base.ConvertTo(items);
-        }
-                        
+    {                                
         public List<PACs> GetAvailablePacs(string url)
         {
             List<PACs> listOfPacs = new();
@@ -49,6 +27,7 @@
                         Local = availablePacs.FindElement(By.TagName("td")).Text
                     });
                 }
+                CloseBrowser();
             }
             return listOfPacs;
         }

@@ -1,5 +1,6 @@
 ﻿using EasyAutomationFramework;
 using javax.swing.border;
+using System.Globalization;
 using TwoCaptcha;
 
 namespace Skynet2.Skynet.Forms
@@ -20,11 +21,12 @@ namespace Skynet2.Skynet.Forms
 
         private Person FillPersonModel()
         {
+            var nameCapitalization = CultureInfo.GetCultureInfo("pt-BR").TextInfo;
             return new Person
             {
-                Name = TextBoxName.Text,
+                Name = nameCapitalization.ToTitleCase(TextBoxName.Text),
                 Cpf = MaskedTextBoxCpf.Text,
-                Birthdate = TextBoxBirthdate.Text,
+                Birthdate = MaskedTextBoxBirthDate.Text,
                 Pac = ComboBoxPacs.Text
             };
         }
@@ -33,7 +35,7 @@ namespace Skynet2.Skynet.Forms
         {
             TextBoxName.Clear();
             MaskedTextBoxCpf.Clear();
-            TextBoxBirthdate.Clear();
+            MaskedTextBoxBirthDate.Clear();
             ComboBoxPacs.Text = "SELECIONE";
             ComboBoxCustomers.Text = "SELECIONE";
             TextBoxName.Focus();
@@ -45,7 +47,7 @@ namespace Skynet2.Skynet.Forms
             {
                 TextBoxName.Text = persons[index].Name;
                 MaskedTextBoxCpf.Text = persons[index].Cpf;
-                TextBoxBirthdate.Text = persons[index].Birthdate;
+                MaskedTextBoxBirthDate.Text = persons[index].Birthdate;
                 ComboBoxPacs.Text = persons[index].Pac;
                 LabelCustomerToMakeAppointment.Text = $"{persons.Count} cliente(s) para agendar.";
             }

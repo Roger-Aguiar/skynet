@@ -48,7 +48,6 @@ namespace Skynet2
                 web.AssignValue(TypeElement.Id, "nome", item.Name);
                 web.AssignValue(TypeElement.Id, "cpf", item.Cpf);
                 web.AssignValue(TypeElement.Id, "dataNascimento", item.Birthdate).element.SendKeys(OpenQA.Selenium.Keys.Enter);
-                //Inserir o código para quebrar o capctcha
             }
         }
 
@@ -62,7 +61,7 @@ namespace Skynet2
                 var pac = from local in listOfPacs where local.Local == item.Pac select local.Id;
 
                 web.StartBrowser();
-                var link = $"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/{pac}";
+                var link = $"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/{pac.FirstOrDefault()}";
                 web.Navigate(link);
                 web.WaitForLoad();
                 web.AssignValue(TypeElement.Id, "via", "1ª Via");
@@ -76,24 +75,7 @@ namespace Skynet2
                 web.AssignValue(TypeElement.Id, "dataNascimento", item.Birthdate).element.SendKeys(OpenQA.Selenium.Keys.Enter);
             }
         }
-
-        private void ExecuteWebScraper()
-        {
-            WebScraper webScraper = new();
-            var computers = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers");
-            var tablets = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers/tablets");
-            var laptops = webScraper.GetData("https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops");
-
-            var parameters = new ParamsDataTable("Data", @"C:\temp\excel", new List<DataTables>
-            {
-                new DataTables("Computers", computers),
-                new DataTables("Laptops", laptops),
-                new DataTables("Tablets", tablets)
-            });
-
-            Base.GenerateExcel(parameters);
-        }
-
+                
         #endregion
 
         private void buttonSearchAppointment_Click(object sender, EventArgs e)
@@ -103,16 +85,22 @@ namespace Skynet2
 
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
+            RichTextBoxPacs.Text += $"Começou a rodar às {DateTime.Now.ToShortTimeString()}\n\n";
+
             WebScraper webScraper = new();
             //var listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
             var listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos.html");
-            //TryMakeAppointment(listOfPacs);
+            if(listOfPacs.Count > 0)
+            {
+                //TryMakeAppointment(listOfPacs);
+            }
 
-            MessageBox.Show("Vagas disponíveis!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            RichTextBoxPacs.Text = $"Vagas disponíveis \n{DateTime.Now.ToShortTimeString()}\n\n";
+            RichTextBoxPacs.Text += $"Vagas disponíveis \n{DateTime.Now.ToShortTimeString()}\n\n";
 
             foreach (var item in listOfPacs)
-                RichTextBoxPacs.Text += $"Id: {item.Id}\n{item.Local}\n";
+                RichTextBoxPacs.Text += $"Id: {item.Id}\n{item.Local}\n\n";
+
+            RichTextBoxPacs.Text += "=========================================";
         }
 
         private void buttonRegisterPerson_Click(object sender, EventArgs e)
