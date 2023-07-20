@@ -89,7 +89,6 @@
             Name = "FormSkynet";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Skynet";
-            Load += FormSkynet_Load;
             ResumeLayout(false);
         }
 

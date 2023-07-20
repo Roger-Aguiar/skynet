@@ -104,11 +104,5 @@ namespace Skynet2
             FormPerson form = new();
             form.ShowDialog();
         }
-
-        private void FormSkynet_Load(object sender, EventArgs e)
-        {
-            //people.Clear();
-            //people = crud.Read(crud.ReadPersonTable());
-        }
     }
 }
