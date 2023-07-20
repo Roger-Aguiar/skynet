@@ -61,7 +61,7 @@ namespace Skynet2
                 //listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
                 listOfPacs.Clear();
                 //Apontando para localhost
-                listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos.html");
+                listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html");
             }
             RichTextBoxPacs.Text += $"Finalizado às {DateTime.Now.ToShortTimeString()}";
         }
@@ -92,10 +92,10 @@ namespace Skynet2
               
             //Apontando para web
             //listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
-            listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos.html");
+            listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html");
             if(listOfPacs.Count > 0)
             {
-                TryMakeAppointment(listOfPacs);
+                //TryMakeAppointment(listOfPacs);
             }
         }
 

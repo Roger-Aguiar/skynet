@@ -1,7 +1,4 @@
-﻿using EasyAutomationFramework;
-using javax.swing.border;
-using System.Globalization;
-using TwoCaptcha;
+﻿using System.Globalization;
 
 namespace Skynet2.Skynet.Forms
 {
@@ -65,7 +62,7 @@ namespace Skynet2.Skynet.Forms
             var web = new Web();
 
             web.StartBrowser();
-            var link = $"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/c582e8c8-8797-46e1-a4a3-d78b7b33bfad";
+            var link = $"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/2421095c-7085-4746-abe4-0f9883f857c1";
             //web.Navigate($"https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Agendar/4de92783-0793-4e83-8bca-2beed7ddaa10");
             web.Navigate(link);
             web.WaitForLoad();

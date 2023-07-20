@@ -1,0 +1,49 @@
+Começou a rodar às 5:40 PM
+
+Vagas disponíveis 
+5:41 PM
+
+Id: 2421095c-7085-4746-abe4-0f9883f857c1
+PAC - SHOPPING LESTE
+
+Id: d5687b16-277c-405b-bd3a-13b0ed8f8ed6
+PAC - SHOPPING VIA NORTE
+
+Id: 5a5770b0-78de-44bf-b513-18efc241219a
+PAC - Móvel Cupuaçu
+
+Id: 0e863bd1-83b3-4e70-9ded-3ea44b1e2b6c
+PAC - MUN. GALERIA ESP. SANTO
+
+Id: b75d02fa-12a7-4dcd-a1a2-6cae5de80b27
+PAC - Móvel Tucumã
+
+Id: d1818213-468d-4690-bcde-6ee62731a7aa
+PAC - STUDIO 5
+
+Id: e7468468-2c8c-4d9e-bd24-753685d060fe
+PAC - SHOPPING PARQUE 10 MALL
+
+Id: a732fb6b-5118-4ddd-9d94-7e84445326ad
+PAC - Móvel Açaí
+
+Id: 4c8e2c0a-8608-4b58-99b1-8d8383a224a0
+PAC-COMPENSA
+
+Id: f4cf2498-faf6-4fa7-bddb-945fef1112e9
+PAC - GALERIA DOS REMÉDIOS
+
+Id: 16014feb-b89f-41f1-9fbd-948748fcd895
+PAC - Móvel Buriti
+
+Id: 92501282-a683-4eb3-b41d-9527d5cecf89
+PAC - ALVORADA
+
+Id: 8fb8b113-8eda-451f-861c-bfb4d0a8bfc4
+PAC - SÃO JOSÉ
+
+Id: a6ae33ef-6d4d-4b72-9fca-e0bd59b389cf
+PAC-MUNICIPAL T4
+
+=========================================Finalizado às 5:41 PMComeçou a rodar às 5:43 PM
+
