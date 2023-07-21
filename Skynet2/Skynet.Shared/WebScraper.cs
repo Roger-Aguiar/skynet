@@ -16,6 +16,7 @@
                 {
                     Thread.Sleep(5000);
                     Navigate(url);
+                    WaitForLoad();
                     tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table/tbody").element.FindElements(By.TagName("tr"));
                 }
 
