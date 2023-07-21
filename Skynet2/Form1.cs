@@ -1,3 +1,6 @@
+using Skynet2.Skynet.Shared;
+using static System.Net.WebRequestMethods;
+
 namespace Skynet2
 {
     public partial class FormSkynet : Form
@@ -81,13 +84,23 @@ namespace Skynet2
 
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
+            string linkWeb = "https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento";
+            string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html";
+
             people = crud.Read(crud.ReadPersonTable());
 
             RichTextBoxPacs.Text += $"Começou a rodar às {DateTime.Now.ToShortTimeString()}\n\n";
               
             //Apontando para web
-            //listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
-            listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html");
+            listOfPacs = webScraper.GetAvailablePacs(linkWeb);
+            //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
+            
+            if(listOfPacs.Count > 0) 
+            {
+                string message = $"Vagas disponíveis para o agendamento de RG. Segue o link para acessar o sistema: {linkWeb}";
+                WhatsApp whatsApp = new();
+                whatsApp.SendMessage(message, "AGENDAMENTO RG");
+            }
             TryMakeAppointment(listOfPacs);    
         }
 
