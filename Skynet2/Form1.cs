@@ -35,11 +35,12 @@ namespace Skynet2
                
         private async void TryMakeAppointment(List<PACs> listOfPacs)
         {
+            FillRichTextBox();
             var web = new Web();
 
-            while(people.Count > 0 && listOfPacs.Count > 0)
+            while(people.Count > 0)
             {
-                FillRichTextBox();
+                
                 var pac = from local in listOfPacs where local.Local == people[0].Pac select local.Id;
 
                 web.StartBrowser();
@@ -57,11 +58,7 @@ namespace Skynet2
                 web.AssignValue(TypeElement.Id, "dataNascimento", people[0].Birthdate).element.SendKeys(OpenQA.Selenium.Keys.Enter);
                 
                 people.RemoveAt(0);
-                //Este aponta para o site
-                //listOfPacs = webScraper.GetAvailablePacs("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento");
-                listOfPacs.Clear();
-                //Apontando para localhost
-                listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html");
+                web.CloseBrowser();
             }
             RichTextBoxPacs.Text += $"Finalizado às {DateTime.Now.ToShortTimeString()}";
         }
@@ -95,7 +92,7 @@ namespace Skynet2
             listOfPacs = webScraper.GetAvailablePacs("file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html");
             if(listOfPacs.Count > 0)
             {
-                //TryMakeAppointment(listOfPacs);
+                TryMakeAppointment(listOfPacs);
             }
         }
 

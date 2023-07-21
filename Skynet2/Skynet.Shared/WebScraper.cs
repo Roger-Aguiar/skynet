@@ -27,7 +27,7 @@
                         Local = availablePacs.FindElement(By.TagName("td")).Text
                     });
                 }
-                //CloseBrowser();
+                CloseBrowser();
             }
             return listOfPacs;
         }
