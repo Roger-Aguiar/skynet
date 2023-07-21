@@ -9,9 +9,9 @@
             if (driver == null)
             {
                 StartBrowser();
-                Navigate(url);
+                Navigate(url);                
                 var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table/tbody").element.FindElements(By.TagName("tr"));
-
+                
                 while (tableOfAvailablePacs.Count == 0)
                 {
                     Thread.Sleep(5000);
