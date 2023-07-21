@@ -1,6 +1,3 @@
-using Skynet2.Skynet.Shared;
-using static System.Net.WebRequestMethods;
-
 namespace Skynet2
 {
     public partial class FormSkynet : Form
