@@ -7,9 +7,10 @@
             List<PACs> listOfPacs = new();
 
             if (driver == null)
-            {
-                StartBrowser(TypeDriver.GoogleChorme, "C:\\Users\\roger\\AppData\\Local\\Google\\Chrome\\User Data");
-                Navigate(url);                
+            {                
+                StartBrowser();
+                Navigate(url);
+                WaitForLoad();
                 var tableOfAvailablePacs = GetValue(TypeElement.Xpath, "//*[@id=\"form\"]/div[2]/div/table/tbody").element.FindElements(By.TagName("tr"));
                 
                 while (tableOfAvailablePacs.Count == 0)

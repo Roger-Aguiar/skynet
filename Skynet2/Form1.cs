@@ -29,11 +29,12 @@ namespace Skynet2
             {
                 web.StartBrowser();
                 web.Navigate("https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento/Consultar");
+                web.WaitForLoad();
                 web.AssignValue(TypeElement.Name, "cpf", item.Cpf).element.SendKeys(OpenQA.Selenium.Keys.Enter);
             }
         }
                
-        private async void TryMakeAppointment(List<PACs> listOfPacs)
+        private async void MakeAppointment(List<PACs> listOfPacs)
         {
             FillRichTextBox();
             var web = new Web();
@@ -82,9 +83,7 @@ namespace Skynet2
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
             string linkWeb = "https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento";
-            string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html";
-
-            people = crud.Read(crud.ReadPersonTable());
+            //string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html";                      
 
             RichTextBoxPacs.Text += $"Começou a rodar às {DateTime.Now.ToShortTimeString()}\n\n";
               
@@ -93,12 +92,17 @@ namespace Skynet2
             //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             
             if(listOfPacs.Count > 0) 
-            {
-                string message = $"Vagas disponíveis para o agendamento de RG. Segue o link para acessar o sistema: {linkWeb}";
+            {                
+                string message = $"Vagas disponíveis para o agendamento de RG em {listOfPacs.Count} PACs. Segue o link para acessar o sistema: {linkWeb}";
+                listOfPacs.Clear();
                 WhatsApp whatsApp = new();
                 whatsApp.SendMessage(message, "AGENDAMENTO RG");
+                people = crud.Read(crud.ReadPersonTable());
+                //Apontando para web
+                listOfPacs = webScraper.GetAvailablePacs(linkWeb);
+                //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             }
-            TryMakeAppointment(listOfPacs);    
+            MakeAppointment(listOfPacs);    
         }
 
         private void buttonRegisterPerson_Click(object sender, EventArgs e)
