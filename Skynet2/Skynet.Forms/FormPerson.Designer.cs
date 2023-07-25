@@ -226,9 +226,9 @@
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(12, 164);
             label7.Name = "label7";
-            label7.Size = new Size(87, 21);
+            label7.Size = new Size(103, 21);
             label7.TabIndex = 16;
-            label7.Text = "Filiação 01:";
+            label7.Text = "Nome do pai:";
             // 
             // TextBoxMother
             // 
@@ -244,9 +244,9 @@
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(12, 199);
             label8.Name = "label8";
-            label8.Size = new Size(87, 21);
+            label8.Size = new Size(111, 21);
             label8.TabIndex = 18;
-            label8.Text = "Filiação 02:";
+            label8.Text = "Nome da mãe:";
             // 
             // FormPerson
             // 

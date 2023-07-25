@@ -60,7 +60,7 @@ namespace Skynet2
                     var result = await solve_captcha.ReCaptchaV2Async("f19489630e32745e0e7a81d18237b05d", captcha_key, link);
                     web.ExecuteScript($"document.querySelector('#g-recaptcha-response').innerHTML = '{result.Request}';");
                     web.AssignValue(TypeElement.Id, "dataNascimento", person.Birthdate).element.SendKeys(OpenQA.Selenium.Keys.Enter);
-                    //web.CloseBrowser();
+                    web.CloseBrowser();
                 }                
             }
 
@@ -85,13 +85,13 @@ namespace Skynet2
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
             string linkWeb = "https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento";
-            string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos5.html";                      
+            //string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos5.html";                      
 
             RichTextBoxPacs.Text += $"Começou a rodar às {DateTime.Now.ToShortTimeString()}\n\n";
               
             //Apontando para web
-            //listOfPacs = webScraper.GetAvailablePacs(linkWeb);
-            listOfPacs = webScraper.GetAvailablePacs(linkLocal);
+            listOfPacs = webScraper.GetAvailablePacs(linkWeb);
+            //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             
             if(listOfPacs.Count > 0) 
             {                

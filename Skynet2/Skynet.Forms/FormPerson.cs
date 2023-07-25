@@ -90,7 +90,7 @@
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if(!update)
+            if (!update)
                 crud.Create(FillPersonModel());
             else
                 crud.Update(FillPersonModel());
