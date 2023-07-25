@@ -53,14 +53,14 @@ namespace Skynet2
                     web.AssignValue(TypeElement.Id, "tipo", "Quero que o sistema escolha o horário mais próximo");
                     web.AssignValue(TypeElement.Id, "nome", person.Name);
                     web.AssignValue(TypeElement.Id, "cpf", person.Cpf);
-                    web.AssignValue(TypeElement.Id, "pai", person.Cpf);
-                    web.AssignValue(TypeElement.Id, "mae", person.Cpf);
+                    web.AssignValue(TypeElement.Id, "pai", person.Pai);
+                    web.AssignValue(TypeElement.Id, "mae", person.Mae);
                     var captcha_key = web.GetValue(TypeElement.Id, "grecaptcharesponse").element.GetAttribute("data-sitekey");
                     var solve_captcha = new Solve();
                     var result = await solve_captcha.ReCaptchaV2Async("f19489630e32745e0e7a81d18237b05d", captcha_key, link);
                     web.ExecuteScript($"document.querySelector('#g-recaptcha-response').innerHTML = '{result.Request}';");
                     web.AssignValue(TypeElement.Id, "dataNascimento", person.Birthdate).element.SendKeys(OpenQA.Selenium.Keys.Enter);
-                    web.CloseBrowser();
+                    //web.CloseBrowser();
                 }                
             }
 
@@ -97,14 +97,13 @@ namespace Skynet2
             {                
                 string message = $"Vagas disponíveis para o agendamento de RG em {listOfPacs.Count} PACs. Segue o link para acessar o sistema: {linkWeb}";
                 
-                WhatsApp whatsApp = new();
-                whatsApp.SendMessage(message, "AGENDAMENTO RG");
+                //WhatsApp whatsApp = new();
+                //whatsApp.SendMessage(message, "AGENDAMENTO RG");
                 people = crud.Read(crud.ReadPersonTable());
                 //Apontando para web
                 //listOfPacs = webScraper.GetAvailablePacs(linkWeb);
-                listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             }
-            MakeAppointment(listOfPacs);    
+            MakeAppointment(listOfPacs);
         }
 
         private void buttonRegisterPerson_Click(object sender, EventArgs e)
