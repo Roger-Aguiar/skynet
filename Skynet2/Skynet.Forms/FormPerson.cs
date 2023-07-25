@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Skynet2.Skynet.Forms
+﻿namespace Skynet2.Skynet.Forms
 {
     public partial class FormPerson : Form
     {
@@ -8,6 +6,7 @@ namespace Skynet2.Skynet.Forms
         private List<Person> persons = new();
         private int index = 0;
         private CRUD crud = new();
+        private bool update = true;
 
         public FormPerson()
         {
@@ -18,19 +17,22 @@ namespace Skynet2.Skynet.Forms
 
         private Person FillPersonModel()
         {
-            var nameCapitalization = CultureInfo.GetCultureInfo("pt-BR").TextInfo;
             return new Person
             {
-                Name = nameCapitalization.ToTitleCase(TextBoxName.Text),
+                Name = TextBoxName.Text.ToUpper(),
                 Cpf = MaskedTextBoxCpf.Text,
                 Birthdate = MaskedTextBoxBirthDate.Text,
-                Pac = ComboBoxPacs.Text
+                Pac = ComboBoxPacs.Text,
+                Mae = TextBoxMother.Text.ToUpper(),
+                Pai = TextBoxFather.Text.ToUpper()
             };
         }
 
         private void ClearFields()
         {
             TextBoxName.Clear();
+            TextBoxMother.Clear();
+            TextBoxFather.Clear();
             MaskedTextBoxCpf.Clear();
             MaskedTextBoxBirthDate.Clear();
             ComboBoxPacs.Text = "SELECIONE";
@@ -47,6 +49,8 @@ namespace Skynet2.Skynet.Forms
                 MaskedTextBoxBirthDate.Text = persons[index].Birthdate;
                 ComboBoxPacs.Text = persons[index].Pac;
                 LabelCustomerToMakeAppointment.Text = $"{persons.Count} cliente(s) para agendar.";
+                TextBoxFather.Text = persons[index].Pai;
+                TextBoxMother.Text = persons[index].Mae;
             }
         }
 
@@ -86,7 +90,11 @@ namespace Skynet2.Skynet.Forms
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            crud.Create(FillPersonModel());
+            if(!update)
+                crud.Create(FillPersonModel());
+            else
+                crud.Update(FillPersonModel());
+
             persons.Clear();
             persons = crud.Read(crud.ReadPersonTable());
             FillFields();
@@ -95,6 +103,7 @@ namespace Skynet2.Skynet.Forms
 
         private void ButtonNew_Click(object sender, EventArgs e)
         {
+            update = false;
             ClearFields();
         }
 

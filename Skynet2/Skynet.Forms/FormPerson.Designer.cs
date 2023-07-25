@@ -114,7 +114,7 @@
             ComboBoxPacs.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxPacs.FormattingEnabled = true;
             ComboBoxPacs.Items.AddRange(new object[] { "PAC-COMPENSA", "PAC - SHOPPING LESTE", "PAC-MUNICIPAL T4", "PAC - SÃO JOSÉ", "PAC - MUN. GALERIA ESP. SANTO", "PAC - GALERIA DOS REMÉDIOS", "PAC - STUDIO 5", "PAC - ALVORADA", "PAC - SHOPPING PARQUE 10 MALL", "PAC - SUMAÚMA", "PAC - SHOPPING VIA NORTE", "PAC - Móvel Açaí", "PAC - Móvel Buriti", "PAC - Móvel Cupuaçu", "PAC - Móvel Tucumã" });
-            ComboBoxPacs.Location = new Point(165, 161);
+            ComboBoxPacs.Location = new Point(165, 231);
             ComboBoxPacs.Name = "ComboBoxPacs";
             ComboBoxPacs.Size = new Size(321, 29);
             ComboBoxPacs.TabIndex = 3;
@@ -124,7 +124,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(12, 164);
+            label5.Location = new Point(12, 234);
             label5.Name = "label5";
             label5.Size = new Size(36, 21);
             label5.TabIndex = 9;
@@ -215,7 +215,7 @@
             // TextBoxFather
             // 
             TextBoxFather.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxFather.Location = new Point(165, 196);
+            TextBoxFather.Location = new Point(165, 161);
             TextBoxFather.Name = "TextBoxFather";
             TextBoxFather.Size = new Size(321, 29);
             TextBoxFather.TabIndex = 15;
@@ -224,7 +224,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(12, 199);
+            label7.Location = new Point(12, 164);
             label7.Name = "label7";
             label7.Size = new Size(87, 21);
             label7.TabIndex = 16;
@@ -233,7 +233,7 @@
             // TextBoxMother
             // 
             TextBoxMother.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBoxMother.Location = new Point(165, 231);
+            TextBoxMother.Location = new Point(165, 196);
             TextBoxMother.Name = "TextBoxMother";
             TextBoxMother.Size = new Size(321, 29);
             TextBoxMother.TabIndex = 17;
@@ -242,7 +242,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(12, 234);
+            label8.Location = new Point(12, 199);
             label8.Name = "label8";
             label8.Size = new Size(87, 21);
             label8.TabIndex = 18;

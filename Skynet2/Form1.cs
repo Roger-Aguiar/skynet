@@ -85,13 +85,13 @@ namespace Skynet2
         private void buttonMakeAppointment_Click(object sender, EventArgs e)
         {
             string linkWeb = "https://amcin.e-instituto.com.br/Vsoft.iDSPS.Agendamento/Agendamento";
-            //string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos2.html";                      
+            string linkLocal = "file:///C:/dev2/skynet/Skynet2/Skynet.Utils/agendamentos5.html";                      
 
             RichTextBoxPacs.Text += $"Começou a rodar às {DateTime.Now.ToShortTimeString()}\n\n";
               
             //Apontando para web
-            listOfPacs = webScraper.GetAvailablePacs(linkWeb);
-            //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
+            //listOfPacs = webScraper.GetAvailablePacs(linkWeb);
+            listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             
             if(listOfPacs.Count > 0) 
             {                
@@ -102,7 +102,7 @@ namespace Skynet2
                 people = crud.Read(crud.ReadPersonTable());
                 //Apontando para web
                 //listOfPacs = webScraper.GetAvailablePacs(linkWeb);
-                //listOfPacs = webScraper.GetAvailablePacs(linkLocal);
+                listOfPacs = webScraper.GetAvailablePacs(linkLocal);
             }
             MakeAppointment(listOfPacs);    
         }
