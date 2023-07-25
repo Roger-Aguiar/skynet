@@ -97,8 +97,8 @@ namespace Skynet2
             {                
                 string message = $"Vagas disponíveis para o agendamento de RG em {listOfPacs.Count} PACs. Segue o link para acessar o sistema: {linkWeb}";
                 
-                //WhatsApp whatsApp = new();
-                //whatsApp.SendMessage(message, "AGENDAMENTO RG");
+                WhatsApp whatsApp = new();
+                whatsApp.SendMessage(message, "AGENDAMENTO RG");
                 people = crud.Read(crud.ReadPersonTable());
                 //Apontando para web
                 //listOfPacs = webScraper.GetAvailablePacs(linkWeb);

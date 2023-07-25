@@ -1,21 +1,13 @@
 ﻿namespace Skynet2.Skynet.Shared
 {
     public class WebScraper : Web
-    {   
-        public void Test()
-        {
-            StartBrowser(TypeDriver.GoogleChorme, "C:\\Users\\roger\\AppData\\Local\\Google\\Chrome\\User Data");
-            //StartBrowser();
-            Navigate("https://www.google.com/");
-
-        }
+    {           
         public List<PACs> GetAvailablePacs(string url)
         {
             List<PACs> listOfPacs = new();
 
             if (driver == null)
             {
-                //StartBrowser(TypeDriver.GoogleChorme, "C:\\Users\\roger\\AppData\\Local\\Google\\Chrome\\User Data");
                 StartBrowser();
                 Navigate(url);
                 WaitForLoad();
