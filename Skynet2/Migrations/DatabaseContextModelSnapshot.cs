@@ -30,10 +30,16 @@ namespace Skynet2.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Mae")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Pac")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Pai")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

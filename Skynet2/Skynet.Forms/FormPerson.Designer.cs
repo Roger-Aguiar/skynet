@@ -44,6 +44,10 @@
             ButtonMakeAppointment = new Button();
             MaskedTextBoxCpf = new MaskedTextBox();
             MaskedTextBoxBirthDate = new MaskedTextBox();
+            TextBoxFather = new TextBox();
+            label7 = new Label();
+            TextBoxMother = new TextBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -67,7 +71,7 @@
             // ButtonSave
             // 
             ButtonSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonSave.Location = new Point(12, 212);
+            ButtonSave.Location = new Point(12, 272);
             ButtonSave.Name = "ButtonSave";
             ButtonSave.Size = new Size(130, 31);
             ButtonSave.TabIndex = 4;
@@ -109,7 +113,7 @@
             // 
             ComboBoxPacs.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxPacs.FormattingEnabled = true;
-            ComboBoxPacs.Items.AddRange(new object[] { "PAC-COMPENSA", "PAC - SHOPPING LESTE", "PAC-MUNICIPAL T4", "PAC - SÃO JOSÉ", "PAC - MUN. GALERIA ESP. SANTO", "PAC - GALERIA DOS REM&#201;DIOS", "PAC - STUDIO 5", "PAC - ALVORADA", "PAC - SHOPPING PARQUE 10 MALL", "PAC - SUMAÚMA", "PAC - SHOPPING VIA NORTE", "PAC - Móvel Açaí", "PAC - Móvel Buriti", "PAC - Móvel Cupuaçu", "PAC - Móvel Tucumã" });
+            ComboBoxPacs.Items.AddRange(new object[] { "PAC-COMPENSA", "PAC - SHOPPING LESTE", "PAC-MUNICIPAL T4", "PAC - SÃO JOSÉ", "PAC - MUN. GALERIA ESP. SANTO", "PAC - GALERIA DOS REMÉDIOS", "PAC - STUDIO 5", "PAC - ALVORADA", "PAC - SHOPPING PARQUE 10 MALL", "PAC - SUMAÚMA", "PAC - SHOPPING VIA NORTE", "PAC - Móvel Açaí", "PAC - Móvel Buriti", "PAC - Móvel Cupuaçu", "PAC - Móvel Tucumã" });
             ComboBoxPacs.Location = new Point(165, 161);
             ComboBoxPacs.Name = "ComboBoxPacs";
             ComboBoxPacs.Size = new Size(321, 29);
@@ -129,7 +133,7 @@
             // ButtonDelete
             // 
             ButtonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonDelete.Location = new Point(186, 212);
+            ButtonDelete.Location = new Point(186, 272);
             ButtonDelete.Name = "ButtonDelete";
             ButtonDelete.Size = new Size(130, 31);
             ButtonDelete.TabIndex = 5;
@@ -140,7 +144,7 @@
             // ButtonNew
             // 
             ButtonNew.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonNew.Location = new Point(356, 212);
+            ButtonNew.Location = new Point(356, 272);
             ButtonNew.Name = "ButtonNew";
             ButtonNew.Size = new Size(130, 31);
             ButtonNew.TabIndex = 6;
@@ -152,7 +156,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(12, 301);
+            label6.Location = new Point(12, 349);
             label6.Name = "label6";
             label6.Size = new Size(68, 21);
             label6.TabIndex = 13;
@@ -162,7 +166,7 @@
             // 
             ComboBoxCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxCustomers.FormattingEnabled = true;
-            ComboBoxCustomers.Location = new Point(165, 298);
+            ComboBoxCustomers.Location = new Point(165, 346);
             ComboBoxCustomers.Name = "ComboBoxCustomers";
             ComboBoxCustomers.Size = new Size(321, 29);
             ComboBoxCustomers.TabIndex = 12;
@@ -173,7 +177,7 @@
             // 
             LabelCustomerToMakeAppointment.AutoSize = true;
             LabelCustomerToMakeAppointment.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelCustomerToMakeAppointment.Location = new Point(12, 349);
+            LabelCustomerToMakeAppointment.Location = new Point(12, 397);
             LabelCustomerToMakeAppointment.Name = "LabelCustomerToMakeAppointment";
             LabelCustomerToMakeAppointment.Size = new Size(0, 25);
             LabelCustomerToMakeAppointment.TabIndex = 14;
@@ -181,7 +185,7 @@
             // ButtonMakeAppointment
             // 
             ButtonMakeAppointment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonMakeAppointment.Location = new Point(12, 249);
+            ButtonMakeAppointment.Location = new Point(12, 309);
             ButtonMakeAppointment.Name = "ButtonMakeAppointment";
             ButtonMakeAppointment.Size = new Size(474, 31);
             ButtonMakeAppointment.TabIndex = 7;
@@ -208,11 +212,51 @@
             MaskedTextBoxBirthDate.TabIndex = 2;
             MaskedTextBoxBirthDate.ValidatingType = typeof(DateTime);
             // 
+            // TextBoxFather
+            // 
+            TextBoxFather.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TextBoxFather.Location = new Point(165, 196);
+            TextBoxFather.Name = "TextBoxFather";
+            TextBoxFather.Size = new Size(321, 29);
+            TextBoxFather.TabIndex = 15;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(12, 199);
+            label7.Name = "label7";
+            label7.Size = new Size(87, 21);
+            label7.TabIndex = 16;
+            label7.Text = "Filiação 01:";
+            // 
+            // TextBoxMother
+            // 
+            TextBoxMother.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TextBoxMother.Location = new Point(165, 231);
+            TextBoxMother.Name = "TextBoxMother";
+            TextBoxMother.Size = new Size(321, 29);
+            TextBoxMother.TabIndex = 17;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(12, 234);
+            label8.Name = "label8";
+            label8.Size = new Size(87, 21);
+            label8.TabIndex = 18;
+            label8.Text = "Filiação 02:";
+            // 
             // FormPerson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 383);
+            ClientSize = new Size(502, 479);
+            Controls.Add(TextBoxMother);
+            Controls.Add(label8);
+            Controls.Add(TextBoxFather);
+            Controls.Add(label7);
             Controls.Add(MaskedTextBoxBirthDate);
             Controls.Add(MaskedTextBoxCpf);
             Controls.Add(ButtonMakeAppointment);
@@ -256,5 +300,9 @@
         private Button ButtonMakeAppointment;
         private MaskedTextBox MaskedTextBoxCpf;
         private MaskedTextBox MaskedTextBoxBirthDate;
+        private TextBox TextBoxFather;
+        private Label label7;
+        private TextBox TextBoxMother;
+        private Label label8;
     }
 }

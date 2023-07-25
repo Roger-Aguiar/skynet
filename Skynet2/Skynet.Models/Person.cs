@@ -7,5 +7,7 @@
         public string? Cpf { get; set; }
         public string? Birthdate { get; set; }
         public string? Pac { get; set;}
+        public string? Pai { get; set; }
+        public string? Mae { get; set; }
     }
 }
