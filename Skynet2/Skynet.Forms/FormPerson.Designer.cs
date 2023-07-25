@@ -74,7 +74,7 @@
             ButtonSave.Location = new Point(12, 272);
             ButtonSave.Name = "ButtonSave";
             ButtonSave.Size = new Size(130, 31);
-            ButtonSave.TabIndex = 4;
+            ButtonSave.TabIndex = 6;
             ButtonSave.Text = "Salvar";
             ButtonSave.UseVisualStyleBackColor = true;
             ButtonSave.Click += ButtonSave_Click;
@@ -117,7 +117,7 @@
             ComboBoxPacs.Location = new Point(165, 231);
             ComboBoxPacs.Name = "ComboBoxPacs";
             ComboBoxPacs.Size = new Size(321, 29);
-            ComboBoxPacs.TabIndex = 3;
+            ComboBoxPacs.TabIndex = 5;
             ComboBoxPacs.Text = "SELECIONE";
             // 
             // label5
@@ -136,7 +136,7 @@
             ButtonDelete.Location = new Point(186, 272);
             ButtonDelete.Name = "ButtonDelete";
             ButtonDelete.Size = new Size(130, 31);
-            ButtonDelete.TabIndex = 5;
+            ButtonDelete.TabIndex = 7;
             ButtonDelete.Text = "Deletar";
             ButtonDelete.UseVisualStyleBackColor = true;
             ButtonDelete.Click += ButtonDelete_Click;
@@ -147,7 +147,7 @@
             ButtonNew.Location = new Point(356, 272);
             ButtonNew.Name = "ButtonNew";
             ButtonNew.Size = new Size(130, 31);
-            ButtonNew.TabIndex = 6;
+            ButtonNew.TabIndex = 8;
             ButtonNew.Text = "Novo";
             ButtonNew.UseVisualStyleBackColor = true;
             ButtonNew.Click += ButtonNew_Click;
@@ -169,7 +169,7 @@
             ComboBoxCustomers.Location = new Point(165, 346);
             ComboBoxCustomers.Name = "ComboBoxCustomers";
             ComboBoxCustomers.Size = new Size(321, 29);
-            ComboBoxCustomers.TabIndex = 12;
+            ComboBoxCustomers.TabIndex = 10;
             ComboBoxCustomers.Text = "SELECIONE";
             ComboBoxCustomers.SelectedIndexChanged += ComboBoxCustomers_SelectedIndexChanged;
             // 
@@ -188,7 +188,7 @@
             ButtonMakeAppointment.Location = new Point(12, 309);
             ButtonMakeAppointment.Name = "ButtonMakeAppointment";
             ButtonMakeAppointment.Size = new Size(474, 31);
-            ButtonMakeAppointment.TabIndex = 7;
+            ButtonMakeAppointment.TabIndex = 9;
             ButtonMakeAppointment.Text = "Agendar";
             ButtonMakeAppointment.UseVisualStyleBackColor = true;
             ButtonMakeAppointment.Click += ButtonMakeAppointment_Click;
@@ -218,7 +218,7 @@
             TextBoxFather.Location = new Point(165, 161);
             TextBoxFather.Name = "TextBoxFather";
             TextBoxFather.Size = new Size(321, 29);
-            TextBoxFather.TabIndex = 15;
+            TextBoxFather.TabIndex = 3;
             // 
             // label7
             // 
@@ -236,7 +236,7 @@
             TextBoxMother.Location = new Point(165, 196);
             TextBoxMother.Name = "TextBoxMother";
             TextBoxMother.Size = new Size(321, 29);
-            TextBoxMother.TabIndex = 17;
+            TextBoxMother.TabIndex = 4;
             // 
             // label8
             // 
