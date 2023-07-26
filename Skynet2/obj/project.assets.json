@@ -3060,11 +3060,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\skynet\\Skynet2\\Skynet2.csproj",
+      "projectUniqueName": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
       "projectName": "Skynet2",
-      "projectPath": "C:\\dev\\skynet\\Skynet2\\Skynet2.csproj",
+      "projectPath": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
       "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\skynet\\Skynet2\\obj\\",
+      "outputPath": "C:\\dev2\\skynet\\Skynet2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3139,7 +3139,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   },
