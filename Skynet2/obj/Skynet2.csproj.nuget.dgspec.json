@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj": {}
+    "C:\\dev2\\skynet2\\Skynet2\\Skynet2.csproj": {}
   },
   "projects": {
-    "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj": {
+    "C:\\dev2\\skynet2\\Skynet2\\Skynet2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
+        "projectUniqueName": "C:\\dev2\\skynet2\\Skynet2\\Skynet2.csproj",
         "projectName": "Skynet2",
-        "projectPath": "C:\\dev2\\skynet\\Skynet2\\Skynet2.csproj",
+        "projectPath": "C:\\dev2\\skynet2\\Skynet2\\Skynet2.csproj",
         "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-        "outputPath": "C:\\dev2\\skynet\\Skynet2\\obj\\",
+        "outputPath": "C:\\dev2\\skynet2\\Skynet2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",
