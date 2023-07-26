@@ -156,6 +156,9 @@ namespace Skynet2.Skynet.Forms
             }
         }
 
-        private void ButtonSearchCpf_Click(object sender, EventArgs e) => SearchCPF(MaskedTextBoxCpf.Text, MaskedTextBoxBirthDate.Text);
+        private void ButtonSearchCpf_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
