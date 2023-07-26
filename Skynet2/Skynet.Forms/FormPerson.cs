@@ -1,4 +1,6 @@
-﻿namespace Skynet2.Skynet.Forms
+﻿using Skynet2.Skynet.Models;
+
+namespace Skynet2.Skynet.Forms
 {
     public partial class FormPerson : Form
     {
@@ -86,6 +88,23 @@
             web.AssignValue(TypeElement.Id, "dataNascimento", "25/04/1986").element.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
+        private async void SearchCPF(string cpf, string birthdate)
+        {
+            var link = $"https://servicos.receita.fazenda.gov.br/Servicos/CPF/ConsultaSituacao/ConsultaPublica.asp";
+            var web = new Web();
+
+            web.StartBrowser();            
+            web.Navigate(link);
+            web.WaitForLoad();
+
+            web.AssignValue(TypeElement.Id, "txtCPF", cpf);
+            web.AssignValue(TypeElement.Id, "txtDataNascimento", birthdate);
+            var captcha_key = web.GetValue(TypeElement.Id, "hcaptcha").element.GetAttribute("data-sitekey");
+            var solve_captcha = new Solve();
+            var result = await solve_captcha.ReCaptchaV2Async("f19489630e32745e0e7a81d18237b05d", captcha_key, link);
+            web.ExecuteScript($"document.querySelector('#g-recaptcha-response').innerHTML = '{result.Request}';");            
+        }
+
         #endregion
 
         private void ButtonSave_Click(object sender, EventArgs e)
@@ -137,9 +156,6 @@
             }
         }
 
-        private void ButtonSearchCpf_Click(object sender, EventArgs e)
-        {
-            TryMakeAppointment();
-        }
+        private void ButtonSearchCpf_Click(object sender, EventArgs e) => SearchCPF(MaskedTextBoxCpf.Text, MaskedTextBoxBirthDate.Text);
     }
 }
