@@ -41,7 +41,7 @@
             label6 = new Label();
             ComboBoxCustomers = new ComboBox();
             LabelCustomerToMakeAppointment = new Label();
-            ButtonMakeAppointment = new Button();
+            ButtonSearchCpf = new Button();
             MaskedTextBoxCpf = new MaskedTextBox();
             MaskedTextBoxBirthDate = new MaskedTextBox();
             TextBoxFather = new TextBox();
@@ -182,16 +182,16 @@
             LabelCustomerToMakeAppointment.Size = new Size(0, 25);
             LabelCustomerToMakeAppointment.TabIndex = 14;
             // 
-            // ButtonMakeAppointment
+            // ButtonSearchCpf
             // 
-            ButtonMakeAppointment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ButtonMakeAppointment.Location = new Point(12, 309);
-            ButtonMakeAppointment.Name = "ButtonMakeAppointment";
-            ButtonMakeAppointment.Size = new Size(474, 31);
-            ButtonMakeAppointment.TabIndex = 9;
-            ButtonMakeAppointment.Text = "Agendar";
-            ButtonMakeAppointment.UseVisualStyleBackColor = true;
-            ButtonMakeAppointment.Click += ButtonMakeAppointment_Click;
+            ButtonSearchCpf.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ButtonSearchCpf.Location = new Point(12, 309);
+            ButtonSearchCpf.Name = "ButtonSearchCpf";
+            ButtonSearchCpf.Size = new Size(474, 31);
+            ButtonSearchCpf.TabIndex = 9;
+            ButtonSearchCpf.Text = "Consultar CPF";
+            ButtonSearchCpf.UseVisualStyleBackColor = true;
+            ButtonSearchCpf.Click += ButtonSearchCpf_Click;
             // 
             // MaskedTextBoxCpf
             // 
@@ -259,7 +259,7 @@
             Controls.Add(label7);
             Controls.Add(MaskedTextBoxBirthDate);
             Controls.Add(MaskedTextBoxCpf);
-            Controls.Add(ButtonMakeAppointment);
+            Controls.Add(ButtonSearchCpf);
             Controls.Add(LabelCustomerToMakeAppointment);
             Controls.Add(label6);
             Controls.Add(ComboBoxCustomers);
@@ -297,7 +297,7 @@
         private Label label6;
         private ComboBox ComboBoxCustomers;
         private Label LabelCustomerToMakeAppointment;
-        private Button ButtonMakeAppointment;
+        private Button ButtonSearchCpf;
         private MaskedTextBox MaskedTextBoxCpf;
         private MaskedTextBox MaskedTextBoxBirthDate;
         private TextBox TextBoxFather;

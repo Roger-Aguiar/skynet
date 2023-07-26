@@ -137,7 +137,7 @@
             }
         }
 
-        private void ButtonMakeAppointment_Click(object sender, EventArgs e)
+        private void ButtonSearchCpf_Click(object sender, EventArgs e)
         {
             TryMakeAppointment();
         }
